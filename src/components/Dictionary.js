@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import SearchBar from './SearchBar'
 import { fetchResult } from '../SearchAPIHelper';
+import ShowDefinition from "./ShowDefinition";
 
 export default function Dictionary() {
 
@@ -13,6 +14,7 @@ export default function Dictionary() {
             fetchResult(API_URL)
                 .then(result => {
                     setData(result)
+                    console.log(result)
                 })
         }
     }, [searchTerm])
@@ -20,7 +22,9 @@ export default function Dictionary() {
     const showDefinition = () => {
         if (data) {
             return (
-                console.log(data)
+                <>
+                    <ShowDefinition data={data} />
+                </>
             )
         }
     }

@@ -8,7 +8,6 @@ import Thesaurus from './components/Thesaurus';
 import HangMan from './components/HangMan';
 
 function App() {
-
   return (
     <div className="App">
       <Router>
