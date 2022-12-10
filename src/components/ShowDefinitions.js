@@ -15,10 +15,13 @@ export default function ShowDefinition(props) {
         <ThemeProvider theme={darkTheme}>
             <Mui.Card sx={{ minWidth: 300, minHeight: 300, margin: 5, padding: 5 }}>
                 <Mui.CardContent>
-                    <Mui.Stack spacing={3}>
                         <Mui.Typography variant='h2'>
-                            {definition.word} ({definition.phonetic})
+                            {definition.word}
                         </Mui.Typography>
+                        <Mui.Typography>
+                            {definition.phonetic}
+                        </Mui.Typography>
+                    <Mui.Stack spacing={3}>
                         <Mui.Typography color='text.secondary'>
                             {definition.meanings[0].partOfSpeech}
                         </Mui.Typography>

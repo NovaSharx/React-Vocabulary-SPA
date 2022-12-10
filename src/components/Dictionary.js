@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import SearchBar from './SearchBar'
 import { fetchResult } from '../SearchAPIHelper';
-import ShowDefinition from "./ShowDefinition";
+import ShowDefinitions from "./ShowDefinitions";
+import * as Mui from '@mui/material'
 
 export default function Dictionary() {
 
@@ -22,9 +23,7 @@ export default function Dictionary() {
     const showDefinition = () => {
         if (data) {
             return (
-                <>
-                    <ShowDefinition data={data} />
-                </>
+                <ShowDefinitions data={data} />
             )
         }
     }
@@ -36,7 +35,7 @@ export default function Dictionary() {
 
     return (
         <div>
-            <h1>Dictionary</h1>
+            <Mui.Typography variant='h2'>DICTIONARY</Mui.Typography>
             <SearchBar handleSearch={handleSearch} />
             {showDefinition()}
         </div>

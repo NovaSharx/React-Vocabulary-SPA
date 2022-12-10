@@ -20,13 +20,13 @@ function App() {
               VOCABULARY APP
             </Mui.Typography>
             <Mui.Stack direction="row" spacing={2}>
-              <Link to='/'>
+              <Link to='/' style={{ color: 'inherit', textDecoration: 'none' }}>
                 <Mui.Button color='inherit'>Dictionary</Mui.Button>
               </Link>
-              <Link to='/thesaurus'>
+              <Link to='/thesaurus' style={{ color: 'inherit', textDecoration: 'none' }}>
                 <Mui.Button color='inherit'>Thesaurus</Mui.Button>
               </Link>
-              <Link to='/hangman'>
+              <Link to='/hangman' style={{ color: 'inherit', textDecoration: 'none' }}>
                 <Mui.Button color='inherit'>HangMan</Mui.Button>
               </Link>
             </Mui.Stack>

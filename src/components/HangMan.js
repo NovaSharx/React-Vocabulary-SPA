@@ -1,7 +1,9 @@
+import * as Mui from '@mui/material'
+
 export default function HangMan() {
     return (
         <div>
-            <h1>HangMan</h1>
+            <Mui.Typography variant='h2'>HANGMAN</Mui.Typography>
         </div>
     )
 
