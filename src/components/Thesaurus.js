@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import SearchBar from "./SearchBar";
 import { fetchResult } from '../SearchAPIHelper';
 import * as Mui from '@mui/material'
+import ThesaurusResults from "./ThesaurusResults";
 
 export default function Thesaurus() {
 
@@ -17,16 +18,17 @@ export default function Thesaurus() {
                     'Content-Type': 'application/json'
                 }
             })
-            .then(result => {
-                setData(result)
-            })
+                .then(result => {
+                    setData(result)
+                    console.log(result)
+                })
         }
     }, [searchTerm])
 
     const showResults = () => {
         if (data) {
             return (
-                console.log(data)
+                <ThesaurusResults data={data} />
             )
         }
     }

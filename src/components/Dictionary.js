@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import SearchBar from './SearchBar'
 import { fetchResult } from '../SearchAPIHelper';
-import ShowDefinitions from "./ShowDefinitions";
+import DictionaryResults from "./DictionaryResults";
 import * as Mui from '@mui/material'
 
 export default function Dictionary() {
@@ -23,7 +23,7 @@ export default function Dictionary() {
     const showDefinition = () => {
         if (data) {
             return (
-                <ShowDefinitions data={data} />
+                <DictionaryResults data={data} />
             )
         }
     }

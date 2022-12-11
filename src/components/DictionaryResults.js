@@ -1,7 +1,9 @@
 import * as Mui from '@mui/material'
 import { ThemeProvider, createTheme } from '@mui/material';
 
-export default function ShowDefinition(props) {
+export default function DictionaryResults(props) {
+
+    // ***Try using an accordion for meanings array ***
 
     const darkTheme = createTheme({
         palette: {
