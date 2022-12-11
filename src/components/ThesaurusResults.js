@@ -15,12 +15,8 @@ export default function ThesaurusResults(props) {
         const output = array.map((word, index) => {
             return (
                 <div key={index}>
-                    <Mui.Divider />
                     <Mui.ListItem component="div" disablePadding>
-                        <Mui.ListItemButton>
-                            <Mui.ListItemText primary={`${index + 1}: ${word}`} />
-                        </Mui.ListItemButton>
-                        <Mui.Divider variant='middle' />
+                        <Mui.ListItemText primary={`${index + 1}: ${word}`} />
                     </Mui.ListItem>
                 </div>
             )
@@ -35,7 +31,7 @@ export default function ThesaurusResults(props) {
                     <Mui.Typography variant='h2'>
                         {results.word}
                     </Mui.Typography>
-                    <Mui.Stack direction='row'>
+                    <Mui.Stack direction='row' spacing={5}>
                         <Mui.Box sx={{ flexGrow: 1, width: '100%' }}>
                             <Mui.Typography variant='h5'>SYNONYMS</Mui.Typography>
                             {renderResultList(results.synonyms)}
