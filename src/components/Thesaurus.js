@@ -20,7 +20,6 @@ export default function Thesaurus() {
             })
                 .then(result => {
                     setData(result)
-                    console.log(result)
                 })
         }
     }, [searchTerm])

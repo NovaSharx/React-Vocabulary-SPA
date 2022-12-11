@@ -15,7 +15,6 @@ export default function Dictionary() {
             fetchResult(API_URL)
                 .then(result => {
                     setData(result)
-                    console.log(result)
                 })
         }
     }, [searchTerm])
