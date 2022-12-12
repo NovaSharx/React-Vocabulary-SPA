@@ -3,6 +3,7 @@ import SearchBar from './SearchBar'
 import { fetchResult } from '../SearchAPIHelper';
 import DictionaryResults from "./DictionaryResults";
 import * as Mui from '@mui/material'
+import Error404 from "./Error404";
 
 export default function Dictionary() {
 
@@ -22,7 +23,9 @@ export default function Dictionary() {
     const showDefinition = () => {
         if (data) {
             return (
-                <DictionaryResults data={data} />
+                <>
+                    {data.Error ? <DictionaryResults data={data} /> : <Error404 />}
+                </>
             )
         }
     }

@@ -10,7 +10,7 @@ export const fetchResult = (...URL) => {
         .then((jsonResponse) => {
             return jsonResponse
         }).catch((error) => {
-            console.log(error)
+            return error
         })
     return result
 }
