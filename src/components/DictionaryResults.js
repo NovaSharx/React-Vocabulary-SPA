@@ -9,7 +9,7 @@ export default function DictionaryResults(props) {
         return (
             <Mui.Stack spacing={2} key={index}>
                 <Mui.Divider textAlign='left'>
-                    <Mui.Typography variant='h5' >
+                    <Mui.Typography variant='h5'>
                         {meaning.partOfSpeech.toUpperCase()}
                     </Mui.Typography>
                 </Mui.Divider>
