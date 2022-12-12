@@ -1,5 +1,16 @@
-export const fetchResult = async (...URL) => {
-    const response = await fetch(...URL)
-    const resData = await response.json()
-    return resData
+export const fetchResult = (...URL) => {
+    const result = fetch(...URL)
+        .then((response) => {
+            if (response.status >= 200 && response.status <= 299) {
+                return response.json()
+            } else {
+                throw Error(response.status)
+            }
+        })
+        .then((jsonResponse) => {
+            return jsonResponse
+        }).catch((error) => {
+            console.log(error)
+        })
+    return result
 }

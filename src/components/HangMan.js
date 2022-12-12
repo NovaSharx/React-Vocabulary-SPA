@@ -1,5 +1,6 @@
 import * as Mui from '@mui/material'
 import ConstructionIcon from '@mui/icons-material/Construction';
+import CasinoIcon from '@mui/icons-material/Casino';
 import { ThemeProvider, createTheme } from '@mui/material';
 import { useState } from 'react';
 import PlayHangMan from './PlayHangMan';
@@ -44,10 +45,10 @@ export default function HangMan() {
                 WIP
             </Mui.Typography>
             <ThemeProvider theme={darkTheme}>
-                <Mui.Card sx={{ margin: 5 }}>
+                <Mui.Card sx={{ margin: 'auto', maxWidth: 1000 }}>
                     <Mui.CardContent>
                         <Mui.Button variant='outlined' onClick={() => { generateRandomWord() }}>
-                            Generate Random Word
+                            <CasinoIcon /> Generate Random Word
                         </Mui.Button>
                         {renderGame()}
                     </Mui.CardContent>
