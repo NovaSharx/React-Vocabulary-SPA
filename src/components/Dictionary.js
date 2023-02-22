@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import SearchBar from './SearchBar'
-import { fetchResult } from '../SearchAPIHelper';
-import DictionaryResults from "./DictionaryResults";
+import { fetchResult } from '../SearchAPIHelper'
+import DictionaryResults from "./DictionaryResults"
 import * as Mui from '@mui/material'
-import Error404 from "./Error404";
+import Error404 from "./Error404"
 
 export default function Dictionary() {
 
@@ -24,7 +24,7 @@ export default function Dictionary() {
         if (data) {
             return (
                 <>
-                    {data.Error ? <DictionaryResults data={data} /> : <Error404 />}
+                    {data.Error ? <Error404 /> : <DictionaryResults data={data} />}
                 </>
             )
         }

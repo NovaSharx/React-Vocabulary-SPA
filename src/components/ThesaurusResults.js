@@ -1,5 +1,5 @@
 import * as Mui from '@mui/material'
-import { ThemeProvider, createTheme } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material'
 
 export default function ThesaurusResults(props) {
 

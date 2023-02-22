@@ -6,7 +6,13 @@ export default function PlayHangMan(props) {
 
     const randomWord = props.randomWord.toUpperCase()
     const randomWordArray = randomWord.split('')
+
+    let [blankArray, setBlankArray] = useState(randomWordArray.map(() => ' '))
+    let [score, setScore] = useState(0)
+    let [hangmanFrame, setHangmanFrame] = useState(0)
+
     const alphabetArray = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
+
     let [wordDefinition, setWordDefinition] = useState('')
 
     useEffect(() => {
@@ -16,11 +22,17 @@ export default function PlayHangMan(props) {
             })
     }, [randomWord])
 
+    useEffect(() => {
+        if (hangmanFrame >= 6) {
+            console.log('YOU LOST! D:')
+        }
+    }, [hangmanFrame, score])
+
     const placeBlanks = randomWordArray.map((letter, index) => {
         return (
             <Mui.Box key={index} sx={{ minWidth: 20, minHeight: 20, borderBottom: 'solid 2px white' }}>
-                <Mui.Typography sx={{ opacity: '25%' }}>
-                    {letter}
+                <Mui.Typography>
+                    {blankArray[index]}
                 </Mui.Typography>
             </Mui.Box>
         )
@@ -28,20 +40,42 @@ export default function PlayHangMan(props) {
 
     const placeAlphabetKeys = alphabetArray.map((letter, index) => {
         return (
-            <Mui.Button key={index} variant='outlined' color='inherit' sx={{ margin: 1 }} onClick={() => submitLetter(letter, this)}>
+            <Mui.Button key={index} variant='outlined' color='inherit' sx={{ margin: 1 }} onClick={(e) => { checkLetter(letter, e.target) }}>
                 {letter}
             </Mui.Button>
         )
     })
 
-    const submitLetter = (letter) => {
+    const checkLetter = (input, button) => {
+        button.remove()
+        if (randomWordArray.includes(input)) {
+            setScore(score + 1)
+            revealLetter(input)
+        } else {
+            setHangmanFrame(hangmanFrame + 1)
+            console.log(`${input} is not in this word...`)
+        }
+    }
 
+    const revealLetter = (input) => {
+        let indexArray = []
+        randomWordArray.forEach((letter, index) => {
+            if (letter === input) {
+                indexArray.push(index)
+            }
+        })
+        let newBlankArray = blankArray
+        for (const index of indexArray) {
+            newBlankArray[index] = input
+        }
+        setBlankArray(newBlankArray)
     }
 
     return (
         <Mui.Box sx={{ margin: 2, padding: 2, border: 'solid 1px white', borderRadius: 3, display: 'flex', justifyContent: 'center' }}>
             <Mui.Stack spacing={2}>
-                {randomWord}
+                {/* {randomWord} */}
+                <Mui.CardMedia component='img' height='500' image={'/hangman_' + hangmanFrame + '.svg'} alt='hangman image' />
                 <Mui.Typography>
                     {wordDefinition}
                 </Mui.Typography>
@@ -55,7 +89,3 @@ export default function PlayHangMan(props) {
         </Mui.Box>
     )
 }
-                // <Mui.Box>
-                //     <Mui.TextField label='Letter' inputProps={{ maxLength: 1, pattern: /^[a-zA-Z]+$/ }} size='small' onChange={(e) => setInput(e.target.value)} />
-                //     <Mui.Button variant='outlined' color='inherit' onClick={() => submitInput()}>Enter</Mui.Button>
-                // </Mui.Box>

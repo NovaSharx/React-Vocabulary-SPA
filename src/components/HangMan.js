@@ -1,10 +1,10 @@
 import * as Mui from '@mui/material'
-import ConstructionIcon from '@mui/icons-material/Construction';
-import CasinoIcon from '@mui/icons-material/Casino';
-import { ThemeProvider, createTheme } from '@mui/material';
-import { useState } from 'react';
-import PlayHangMan from './PlayHangMan';
-import { fetchResult } from '../SearchAPIHelper';
+import ConstructionIcon from '@mui/icons-material/Construction'
+import CasinoIcon from '@mui/icons-material/Casino'
+import { ThemeProvider, createTheme } from '@mui/material'
+import { useState } from 'react'
+import PlayHangMan from './PlayHangMan'
+import { fetchResult } from '../SearchAPIHelper'
 
 export default function HangMan() {
 

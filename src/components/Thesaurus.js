@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import SearchBar from "./SearchBar";
-import { fetchResult } from '../SearchAPIHelper';
+import SearchBar from "./SearchBar"
+import { fetchResult } from '../SearchAPIHelper'
 import * as Mui from '@mui/material'
-import ThesaurusResults from "./ThesaurusResults";
+import ThesaurusResults from "./ThesaurusResults"
 
 export default function Thesaurus() {
 
