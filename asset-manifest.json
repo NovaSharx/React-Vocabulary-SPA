@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-vocabulary-spa/static/css/main.073c9b0a.css",
+    "main.js": "/react-vocabulary-spa/static/js/main.ece184b8.js",
+    "static/js/787.b012d050.chunk.js": "/react-vocabulary-spa/static/js/787.b012d050.chunk.js",
+    "index.html": "/react-vocabulary-spa/index.html",
+    "main.073c9b0a.css.map": "/react-vocabulary-spa/static/css/main.073c9b0a.css.map",
+    "main.ece184b8.js.map": "/react-vocabulary-spa/static/js/main.ece184b8.js.map",
+    "787.b012d050.chunk.js.map": "/react-vocabulary-spa/static/js/787.b012d050.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.ece184b8.js"
+  ]
+}
